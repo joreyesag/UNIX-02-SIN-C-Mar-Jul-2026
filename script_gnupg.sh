@@ -10,3 +10,5 @@ gpg -u joreyesag@uide.edu.ec -r macharroja@uide.edu.ec --encrypt --sign --armor 
 gpg --decrypt mensaje_final_seguro.asc
 # BLOCK C: Decryption of the first asymmetric test
 gpg --decrypt --output doc_descifrado_bloque_c.txt doc_cifrado.txt
+# BLOCK F: Final recovery and validation
+gpg --decrypt --output mensaje_final_recuperado.txt mensaje_final_seguro.asc
