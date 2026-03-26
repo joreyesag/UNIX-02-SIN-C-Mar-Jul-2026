@@ -5,10 +5,11 @@ gpg -u joreyesag@uide.edu.ec --armor --detach-sign --output documento_jordan_det
 # FINAL VALIDATION: Web of Trust verified
 gpg --list-sigs macharroja@uide.edu.ec
 gpg --verify doc_uide_dual_final.gpg
-# BLOCK F: Simultaneous Encryption and Signing
+#Simultaneous Encryption and Signing
 gpg -u joreyesag@uide.edu.ec -r macharroja@uide.edu.ec --encrypt --sign --armor --output mensaje_final_seguro.asc documento_uide.txt
 gpg --decrypt mensaje_final_seguro.asc
-# BLOCK C: Decryption of the first asymmetric test
+#Decryption of the first asymmetric test
 gpg --decrypt --output doc_descifrado_bloque_c.txt doc_cifrado.txt
-# BLOCK F: Final recovery and validation
+# Final recovery and validation
 gpg --decrypt --output mensaje_final_recuperado.txt mensaje_final_seguro.asc
+
