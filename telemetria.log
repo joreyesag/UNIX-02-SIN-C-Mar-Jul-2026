@@ -1,0 +1,5 @@
+2026-04-22T08:00:00Z sensor=temperatura valor=21.3 C
+2026-04-22T08:05:00Z sensor=presion    valor=1013.2 hPa
+2026-04-22T08:10:00Z sensor=humedad    valor=67.5 %
+2026-04-22T08:15:00Z sensor=temperatura valor=21.5 C
+2026-04-22T08:20:00Z sensor=presion    valor=1013.4 hPa
