@@ -1,0 +1,254 @@
+👋 Welcome to Codespaces! You are on our default image. 
+   - It includes runtimes and tools for Python, Node.js, Docker, and more. See the full list here: https://aka.ms/ghcs-default-image
+   - Want to use a custom image instead? Learn more here: https://aka.ms/configure-codespace
+
+🔍 To explore VS Code to its fullest, search using the Command Palette (Cmd/Ctrl + Shift + P or F1).
+
+📝 Edit away, run your app as usual, and we'll automatically make it available for you to access.
+
+
+
+j@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (main) $ 
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (main) $ 
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (main) $ 
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (main) $ git remote add upstream https://github.com/jonathanetitoo/UNIX-02-SIN-C-Mar-Jul-2026.git
+error: remote upstream already exists.
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (main) $ git fetch upstream
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 11 (delta 2), reused 2 (delta 2), pack-reused 4 (from 2)
+Unpacking objects: 100% (11/11), 1.31 KiB | 111.00 KiB/s, done.
+From https://github.com/jonathanetitoo/UNIX-02-SIN-C-Mar-Jul-2026
+ * [new branch]      boot         -> upstream/boot
+ * [new branch]      eval_p2_1_g1 -> upstream/eval_p2_1_g1
+ * [new branch]      filesystem   -> upstream/filesystem
+ * [new branch]      main         -> upstream/main
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (main) $ git checkout -b eval_p2 upstream/eval_p2_1_g1
+branch 'eval_p2' set up to track 'upstream/eval_p2_1_g1'.
+Switched to a new branch 'eval_p2'
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ git push -u origin eval_p2
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: 
+remote: Create a pull request for 'eval_p2' on GitHub by visiting:
+remote:      https://github.com/joreyesag/UNIX-02-SIN-C-Mar-Jul-2026/pull/new/eval_p2
+remote: 
+To https://github.com/joreyesag/UNIX-02-SIN-C-Mar-Jul-2026
+ * [new branch]      eval_p2 -> eval_p2
+branch 'eval_p2' set up to track 'origin/eval_p2'.
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ cd orion
+bash: cd: orion: No such file or directory
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ cd evaluation/orion/
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ mv notas apuntes
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ mkdir respaldos
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ ls
+apuntes  config.tmp  respaldos  script.sh  script.sh.sig  telemetria.log
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ cd evaluation/orion/
+bash: cd: evaluation/orion/: No such file or directory
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ mv telemetria.log apuntes/
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ mv config.tmp config.conf
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ git commit -m "Fix problema 2: files moves"
+On branch eval_p2
+Your branch is ahead of 'origin/eval_p2' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ git push
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 845 bytes | 845.00 KiB/s, done.
+Total 9 (delta 5), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (5/5), completed with 2 local objects.
+To https://github.com/joreyesag/UNIX-02-SIN-C-Mar-Jul-2026
+   72f1d63..a7c77eb  eval_p2 -> eval_p2
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ cd evaluation/orion/apuntes/
+bash: cd: evaluation/orion/apuntes/: No such file or directory
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ ls
+apuntes  config.conf  respaldos  script.sh  script.sh.sig
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ cd apuntes
+@joreyesag ➜ .../UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion/apuntes (eval_p2) $ ^C
+@joreyesag ➜ .../UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion/apuntes (eval_p2) $ chmod 640 telemetria.log
+@joreyesag ➜ .../UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion/apuntes (eval_p2) $ ls
+README.txt  telemetria.log
+@joreyesag ➜ .../UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion/apuntes (eval_p2) $ git add .
+git commit -m "Fix problema 3: permisos numericos 640 en telemetria.log"
+On branch eval_p2
+Your branch is up to date with 'origin/eval_p2'.
+
+nothing to commit, working tree clean
+@joreyesag ➜ .../UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion/apuntes (eval_p2) $ cd ..
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ chmod u+x script.sh
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ chmod o-w config.conf
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ cd ../..
+git add .
+git commit -m "Fix problema 4: permisos simbolicos corregidos"
+On branch eval_p2
+Your branch is ahead of 'origin/eval_p2' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ cd evaluation/orion/
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ chmod u+s script.sh
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ ls -l script.sh
+-rwsrw-rw- 1 codespace codespace 125 Apr 24 14:22 script.sh
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ git add .
+git commit -m "Fix problema 5: SUID activado en script.sh"
+On branch eval_p2
+Your branch is up to date with 'origin/eval_p2'.
+
+nothing to commit, working tree clean
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ cchmod +t /tmp/orion_zone
+bash: cchmod: command not found
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ chmod +t /tmp/orion_zone
+chmod: cannot access '/tmp/orion_zone': No such file or directory
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ cd ../..
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ ls
+LICENSE  README.md  evaluation
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ sudo mkdir -p /tmp/orion_zone
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ sudo chmod 777 /tmp/orion_zone
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ ^C
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ sudo chmod +t /tmp/orion_zone
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ ls -ld /tmp/orion_zone
+drwxrwxrwt+ 2 root root 4096 Apr 24 14:39 /tmp/orion_zone
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ git add .
+git commit -m "Fix problema 6: sticky bit en /tmp/orion_zone"
+On branch eval_p2
+Your branch is ahead of 'origin/eval_p2' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ git push
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 198 bytes | 198.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/joreyesag/UNIX-02-SIN-C-Mar-Jul-2026
+   7b2826f..9f456e9  eval_p2 -> eval_p2
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ cat > lyra_key.txt <<EOF
+     Key-Type: RSA
+     Key-Length: 3072
+     Name-Real: lyra
+     Name-Email: lyra@orion.lab
+     Expire-Date: 0
+     %no-protection
+     %commit
+EOF
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ gpg --batch --generate-key lyra_key.txt
+gpg: directory '/home/codespace/.gnupg' created
+gpg: keybox '/home/codespace/.gnupg/pubring.kbx' created
+gpg: /home/codespace/.gnupg/trustdb.gpg: trustdb created
+gpg: directory '/home/codespace/.gnupg/openpgp-revocs.d' created
+gpg: revocation certificate stored as '/home/codespace/.gnupg/openpgp-revocs.d/E23E3A8133DED4371B0641C9BC4763CBB92E3587.rev'
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ rm lyra_key.txt
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ cd evaluation/orion/apuntes/
+@joreyesag ➜ .../UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion/apuntes (eval_p2) $ gpg --encrypt --recipient lyra@orion.lab telemetria.log
+gpg: checking the trustdb
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
+@joreyesag ➜ .../UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion/apuntes (eval_p2) $ 
+@joreyesag ➜ .../UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion/apuntes (eval_p2) $ ls telemetria.log.gpg
+telemetria.log.gpg
+@joreyesag ➜ .../UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion/apuntes (eval_p2) $ cd ../../..
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ git add .
+git commit -m "Fix problema 7: llave GPG generada y telemetria.log cifrado"
+[eval_p2 3d1e1db] Fix problema 7: llave GPG generada y telemetria.log cifrado
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 evaluation/orion/apuntes/telemetria.log.gpg
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ cd evaluation/orion/
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ gpg --clearsign --local-user lyra@orion.lab config.conf
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ gpg --verify script.sh.sig script.sh
+gpg: Signature made Fri Apr 24 13:46:42 2026 UTC
+gpg:                using RSA key 102A0DBA8C21CCEB732B31AF6CDF8F7311CCDE53
+gpg:                issuer "instructor-orion@unix.eval"
+gpg: Can't check signature: No public key
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ gpg --detach-sign --local-user lyra@orion.lab --output script.sh.sig --overwrite script.sh
+gpg: invalid option "--overwrite"
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ 
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ rm script.sh.sig
+rm: cannot remove 'script.sh.sig': No such file or directory
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ cd evaluation/orion/
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ gpg --detach-sign --local-user lyra@orion.lab --output script.sh.sig script.sh
+File 'script.sh.sig' exists. Overwrite? (y/N) y
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ gpg --verify config.conf.asc
+gpg: Signature made Fri Apr 24 14:44:03 2026 UTC
+gpg:                using RSA key E23E3A8133DED4371B0641C9BC4763CBB92E3587
+gpg:                issuer "lyra@orion.lab"
+gpg: Good signature from "lyra <lyra@orion.lab>" [ultimate]
+gpg: WARNING: not a detached signature; file 'config.conf' was NOT verified!
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ @joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ rm script.sh.sig
+rm: cannot remove 'script.sh.sig': No such file or directory
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ cd evaluation/orion/
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ gpg --detach-sign --local-user lyra@orion.lab --output script.sh.sig script.sh
+File 'script.sh.sig' exists. Overwrite? (y/N) y
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ gpg --verify config.conf.asc
+gpg: Signature made Fri Apr 24 14:44:03 2026 UTC
+gpg:                using RSA key E23E3A8133DED4371B0641C9BC4763CBB92E3587
+gpg:                issuer "lyra@orion.lab"
+gpg: Good signature from "lyra <lyra@orion.lab>" [ultimate]
+gpg: WARNING: not a detached signature; file 'config.conf' was NOT verified!
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ 
+^C
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ 
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026/evaluation/orion (eval_p2) $ cd ../..
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ git add .
+git commit -m "Fix problema 8: firmas GPG corregidas y creadas"
+[eval_p2 6936464] Fix problema 8: firmas GPG corregidas y creadas
+ 2 files changed, 22 insertions(+)
+ create mode 100644 evaluation/orion/config.conf.asc
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ git push
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 1.53 KiB | 1.53 MiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/joreyesag/UNIX-02-SIN-C-Mar-Jul-2026
+   3d1e1db..6936464  eval_p2 -> eval_p2
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ gpg --list-keys lyra@orion.lab
+pub   rsa3072 2026-04-24 [SCEAR]
+      E23E3A8133DED4371B0641C9BC4763CBB92E3587
+uid           [ultimate] lyra <lyra@orion.lab>
+
+@joreyesag ➜ /workspaces/UNIX-02-SIN-C-Mar-Jul-2026 (eval_p2) $ Apéndice B — Cheatsheet de git (por si es tu primera vez)
+
+# Ver qué archivos has cambiado
+git status
+
+# Añadir TODO lo cambiado al siguiente commit
+git add .
+
+# Hacer el commit con un mensaje
+git commit -m "Fix problema N: descripción breve"
+
+# Ver el historial de commits
+git log --oneline
+
+# Si escribiste mal el mensaje del último commit, corrígelo con:
+En el editor gráfico (VS Code / Codespaces): panel Source Control (Ctrl+Shift+G) → escribes el mensaje arriba → Ctrl+Enter hace commit. + junto a cada archivo hace git add.
+bash: syntax error near unexpected token `('
+On branch eval_p2
+Your branch is up to date with 'origin/eval_p2'.
+
+nothing to commit, working tree clean
+On branch eval_p2
+Your branch is up to date with 'origin/eval_p2'.
+
+nothing to commit, working tree clean
+6936464 (HEAD -> eval_p2, origin/eval_p2) Fix problema 8: firmas GPG corregidas y creadas
+3d1e1db Fix problema 7: llave GPG generada y telemetria.log cifrado
+12bffd8 Create the final key and deleate the temporaly file
+7a343a9 Creat fisrt key
+9f456e9 SUID activado en script.sh"
+7b2826f Erase the permit to other write
+e1e45d9 give permision to the owner
+5ef0046 Fix problema 3: permisos numericos 640 en telemetria.log
+a7c77eb Fix extension from config.tmp to .conf
+dfe6123 Move telemetry to apuntes
+72f1d63 Create the directory respaldos
+6858019 Change te name of the file to apuntesa
+8c5b879 I bring the updates that we need into the branch
+94da4d6 (upstream/eval_p2_1_g1) wip: init
+:
