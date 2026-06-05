@@ -1,11 +1,13 @@
 #!/bin/bash
-
-#sets an array
-IP_ADRESSES=(192.168.1.1 192.168.1.2 192.168.1.3)
-
-#Print all the elements in the array 
+# Sets an array
+IP_ADDRESSES=(192.168.1.1 192.168.1.2 192.168.1.3)
+# Prints all elements in the array
+set -x
 echo "${IP_ADDRESSES[*]}"
+set +x
+# Prints only the first element in the array
+echo "${IP_ADDRESSES[0]}"
 
-#prints only the first element in the array
+#
+# unset IP_ADDRESSES[1]
 echo "${IP_ADDRESSES[*]}"
-
