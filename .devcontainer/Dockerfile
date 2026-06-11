@@ -19,3 +19,10 @@ ENV DEBIAN_FRONTEND=noninteractive \
     LANG=es_ES.UTF-8 \
     LC_ALL=es_ES.UTF-8 \
     TERM=xterm-256color
+# [Block d] Automating Interactive Prompts via Debconf
+# During packet analysis tool installations (like Wireshark), the OS triggers an interactive 
+# prompt asking if non-root users should capture packets. Since we are building an automated 
+# container, we use a standard Unix pipe '|' (BHB Ch.1) to redirect the standard output of 
+# 'echo' into the standard input of 'debconf-set-selections'. This pre-seeds the installation 
+# database with a 'true' answer, avoiding build-time freezes.
+RUN echo "wireshark-common wireshark-common/install-setuid boolean true" | debconf-set-selections
