@@ -70,3 +70,33 @@ RUN git config --system core.autocrlf false \
 # /etc/passwd. Here, we switch the root user's default login shell from bash to Zsh, ensuring 
 # that any interactive TUI or developer terminal session initiates with Zsh features by default.
 RUN chsh -s /usr/bin/zsh root
+# [Block l] Zsh Configuration via Here-Document (Heredoc)
+# As covered in BHB Ch.1, a Here-Document ('<<EOF') redirects standard input multi-line strings 
+# directly into a command (in this case, appending via 'cat >>' to the user's Zsh runtime 
+# configuration file '/root/.zshrc'). Single quotes around 'EOF' preserve string literal values, 
+# injects a clean, minimal, dual-line colorized CLI prompt utilizing custom Zsh ANSI escapes (%F/%f).
+RUN cat >> /root/.zshrc <<'EOF'
+PROMPT="%F{cyan}┌[%F{red}%n%F{cyan}]-[%F{yellow}%~%F{cyan}]%f
+%F{cyan}└> %f"
+EOF
+
+# [Block m] Default Container Execution Command
+# CMD specifies the default system program to run ONLY when the container initializes at runtime, 
+# unlike RUN which executes and locks changes at build time. We call '/usr/bin/zsh' to drop 
+# the developer straight into our freshly customized interactive shell.
+CMD ["/usr/bin/zsh"]
+# [Block l] Zsh Configuration via Here-Document (Heredoc)
+# As covered in BHB Ch.1, a Here-Document ('<<EOF') redirects standard input multi-line strings 
+# directly into a command (in this case, appending via 'cat >>' to the user's Zsh runtime 
+# configuration file '/root/.zshrc'). Single quotes around 'EOF' preserve string literal values, 
+# injects a clean, minimal, dual-line colorized CLI prompt utilizing custom Zsh ANSI escapes (%F/%f).
+RUN cat >> /root/.zshrc <<'EOF'
+PROMPT="%F{cyan}┌[%F{red}%n%F{cyan}]-[%F{yellow}%~%F{cyan}]%f
+%F{cyan}└> %f"
+EOF
+
+# [Block m] Default Container Execution Command
+# CMD specifies the default system program to run ONLY when the container initializes at runtime, 
+# unlike RUN which executes and locks changes at build time. We call '/usr/bin/zsh' to drop 
+# the developer straight into our freshly customized interactive shell.
+CMD ["/usr/bin/zsh"]
