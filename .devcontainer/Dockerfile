@@ -46,57 +46,24 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && locale-gen \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
-    # [Block h] Shell Execution Override
-# By default, Docker executes RUN instructions using '/bin/sh -c'. We explicitly override 
-# this to '/bin/bash' using JSON array syntax. This allows us to use advanced Bash features, 
-# better pipeline error handling, and logical expansions covered in BHB Ch.1 for any subsequent steps.
+# [Block h] Shell Execution Override
 SHELL ["/bin/bash", "-c"]
 
 # [Block i] Default Working Directory
-# WORKDIR creates and switches the execution context to '/workspaces'. Every subsequent command, 
-# environment execution, or mount point will occur relative to this directory, isolating our 
-# development workspace from the root system files.
 WORKDIR /workspaces
+
 # [Block j] System-Wide Git and LFS Provisioning
-# We configure global Git policies at the system level. Setting 'core.autocrlf' to false is 
-# essential in cross-platform container development to prevent Windows carriage returns (\r\n) 
-# from corrupting Unix line feeds (\n). We then initialize Git Large File Storage (LFS) globally 
-# to manage large binary assets efficiently without bloated repo clones.
 RUN git config --system core.autocrlf false \
     && git lfs install --system
 
 # [Block k] Default Shell Modification for Root
-# The 'chsh' (change shell) command modifies the user's login shell configuration entry in 
-# /etc/passwd. Here, we switch the root user's default login shell from bash to Zsh, ensuring 
-# that any interactive TUI or developer terminal session initiates with Zsh features by default.
 RUN chsh -s /usr/bin/zsh root
+
 # [Block l] Zsh Configuration via Here-Document (Heredoc)
-# As covered in BHB Ch.1, a Here-Document ('<<EOF') redirects standard input multi-line strings 
-# directly into a command (in this case, appending via 'cat >>' to the user's Zsh runtime 
-# configuration file '/root/.zshrc'). Single quotes around 'EOF' preserve string literal values, 
-# injects a clean, minimal, dual-line colorized CLI prompt utilizing custom Zsh ANSI escapes (%F/%f).
 RUN cat >> /root/.zshrc <<'EOF'
 PROMPT="%F{cyan}┌[%F{red}%n%F{cyan}]-[%F{yellow}%~%F{cyan}]%f
 %F{cyan}└> %f"
 EOF
 
 # [Block m] Default Container Execution Command
-# CMD specifies the default system program to run ONLY when the container initializes at runtime, 
-# unlike RUN which executes and locks changes at build time. We call '/usr/bin/zsh' to drop 
-# the developer straight into our freshly customized interactive shell.
-CMD ["/usr/bin/zsh"]
-# [Block l] Zsh Configuration via Here-Document (Heredoc)
-# As covered in BHB Ch.1, a Here-Document ('<<EOF') redirects standard input multi-line strings 
-# directly into a command (in this case, appending via 'cat >>' to the user's Zsh runtime 
-# configuration file '/root/.zshrc'). Single quotes around 'EOF' preserve string literal values, 
-# injects a clean, minimal, dual-line colorized CLI prompt utilizing custom Zsh ANSI escapes (%F/%f).
-RUN cat >> /root/.zshrc <<'EOF'
-PROMPT="%F{cyan}┌[%F{red}%n%F{cyan}]-[%F{yellow}%~%F{cyan}]%f
-%F{cyan}└> %f"
-EOF
-
-# [Block m] Default Container Execution Command
-# CMD specifies the default system program to run ONLY when the container initializes at runtime, 
-# unlike RUN which executes and locks changes at build time. We call '/usr/bin/zsh' to drop 
-# the developer straight into our freshly customized interactive shell.
 CMD ["/usr/bin/zsh"]
