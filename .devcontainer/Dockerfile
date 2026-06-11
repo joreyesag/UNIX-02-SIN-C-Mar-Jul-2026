@@ -57,3 +57,16 @@ SHELL ["/bin/bash", "-c"]
 # environment execution, or mount point will occur relative to this directory, isolating our 
 # development workspace from the root system files.
 WORKDIR /workspaces
+# [Block j] System-Wide Git and LFS Provisioning
+# We configure global Git policies at the system level. Setting 'core.autocrlf' to false is 
+# essential in cross-platform container development to prevent Windows carriage returns (\r\n) 
+# from corrupting Unix line feeds (\n). We then initialize Git Large File Storage (LFS) globally 
+# to manage large binary assets efficiently without bloated repo clones.
+RUN git config --system core.autocrlf false \
+    && git lfs install --system
+
+# [Block k] Default Shell Modification for Root
+# The 'chsh' (change shell) command modifies the user's login shell configuration entry in 
+# /etc/passwd. Here, we switch the root user's default login shell from bash to Zsh, ensuring 
+# that any interactive TUI or developer terminal session initiates with Zsh features by default.
+RUN chsh -s /usr/bin/zsh root
