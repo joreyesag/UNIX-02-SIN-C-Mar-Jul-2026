@@ -46,3 +46,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && locale-gen \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+    # [Block h] Shell Execution Override
+# By default, Docker executes RUN instructions using '/bin/sh -c'. We explicitly override 
+# this to '/bin/bash' using JSON array syntax. This allows us to use advanced Bash features, 
+# better pipeline error handling, and logical expansions covered in BHB Ch.1 for any subsequent steps.
+SHELL ["/bin/bash", "-c"]
+
+# [Block i] Default Working Directory
+# WORKDIR creates and switches the execution context to '/workspaces'. Every subsequent command, 
+# environment execution, or mount point will occur relative to this directory, isolating our 
+# development workspace from the root system files.
+WORKDIR /workspaces
