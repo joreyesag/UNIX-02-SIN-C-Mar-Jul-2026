@@ -26,3 +26,23 @@ ENV DEBIAN_FRONTEND=noninteractive \
 # 'echo' into the standard input of 'debconf-set-selections'. This pre-seeds the installation 
 # database with a 'true' answer, avoiding build-time freezes.
 RUN echo "wireshark-common wireshark-common/install-setuid boolean true" | debconf-set-selections
+# [Blocks e, f, g] Package Installation, Locale Synthesis, and Layer Optimization
+# To maintain a minimal image footprint, we chain operations inside a single RUN step 
+# using the logical AND operator '&&' and line breaks '\' (BHB Ch.1), ensuring no redundant 
+# intermediary layers are saved to disk.
+# - 'update' synchronizes package trees, 'install' pulls the binaries, '-y' auto-accepts prompts, 
+#   and '--no-install-recommends' blocks optional bloatware.
+# - We install text processors (BHB Ch.2): 'gawk', 'sed', and 'grep' for data parsing; 'jq' for JSON; 
+#   and 'shellcheck' for script auditing.
+# - Network/Security tools: 'nmap' (port scanner), 'tcpdump'/'tshark' (packet sniffers), 
+#   'tor'/'proxychains4' (proxy routing), and 'man-db' for documentation manuals.
+# - [Block f]: We leverage 'sed' (Stream Editor - BHB Ch.2) to inline-replace and uncomment the Spanish 
+#   locale string within '/etc/locale.gen', then invoke 'locale-gen' to compile system localization.
+# - [Block g]: At the end of the exact same instruction pipeline, 'apt-get clean' and 'rm -rf' completely 
+#   wipe the local package cache before Docker seals the filesystem layer, saving hundreds of megabytes.
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gawk sed grep shellcheck nmap tcpdump tshark tor proxychains4 jq man-db locales git git-lfs \
+    && sed -i 's/^# *\(es_ES.UTF-8\)/\1/' /etc/locale.gen \
+    && locale-gen \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
