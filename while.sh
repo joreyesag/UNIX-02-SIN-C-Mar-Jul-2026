@@ -1,3 +1,5 @@
-while some_condition; do
-# run commands while the condition is true
+#!/bin/bash
+while true; do
+echo "Looping..."
+sleep 2
 done
